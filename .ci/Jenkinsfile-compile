@@ -10,11 +10,11 @@ pipeline {
           def build_nodes = [:]
           def docker_images = [
             arch: "px4io/px4-dev-base-archlinux:2019-01-01",
-            armhf: "px4io/px4-dev-armhf:2019-01-01",
+            armhf: "px4io/px4-dev-armhf:2019-01-27",
             base: "px4io/px4-dev-base:2019-01-26",
-            nuttx: "px4io/px4-dev-nuttx:2019-01-01",
-            ros: "px4io/px4-dev-ros:2019-01-01",
-            rpi: "px4io/px4-dev-raspi:2019-01-01",
+            nuttx: "px4io/px4-dev-nuttx:2019-01-27",
+            ros: "px4io/px4-dev-ros:2019-01-27",
+            rpi: "px4io/px4-dev-raspi:2019-01-27",
             snapdragon: "lorenzmeier/px4-dev-snapdragon:2018-09-12"
           ]
 
@@ -69,7 +69,7 @@ pipeline {
 
           // docker builds:
           def arch_builds = [
-            target: ["px4_sitl_default"],
+            target: ["px4_sitl_default (arch)"],
             image: docker_images.arch,
             archive: false
           ]
